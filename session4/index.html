@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal, Inline and External Styling</title>
+    <link rel="stylesheet" href="./index.css"> <!-- External CSS file -->
+</head>
+<body>
+
+    <!-- Internal Styling -->
+
+    <style>
+        /* Element Selector */
+
+        /* h1 {
+            color: blue;
+        } */
+
+        /* Id Selector -> uses # */ 
+
+        #second {
+            color: red;
+        }
+
+        /* Class Selector -> uses . */
+
+        .header {
+            color: blue;
+        }
+
+        .font-size{
+            font-size: 50px;
+        }
+
+        .font-color {
+            color: green;
+        }
+
+        #hello {
+            color: brown !important; /* !important overrides other styles */
+        }
+
+        .box{
+            background-color: red;
+        }
+
+    </style>
+
+    <!-- Inline Styling -->
+
+    <h1 id="first" class="header font-size">Internal, Inline and External Styling</h1>
+    <h2 class="header font-size">Internal, Inline and External Styling</h2>
+    <h1 class="font-color" id="second">Internal, Inline and External Styling</h1>
+
+    <h3 id="hello" style="color: pink;">Inline vs Internal Styling</h3>
+
+    <!-- External Styling -->
+    <!-- Style prioritizes internal styling -->
+
+    <div class="box">
+        
+    </div>
+    
+
+</body>
+</html>
