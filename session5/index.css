@@ -1,0 +1,45 @@
+/*
+UNIVERSAL SELECTOR
+SYNTAX:
+
+selector {
+  property: value;
+}
+
+
+*/
+
+* { /* asterisk sign means universal */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#ext {
+    color: green;
+}
+
+section{
+    height: 80vh; /* View Port Height */
+}
+
+h1 {
+    font-size: 3rem; /* 3rem = 48px */
+}
+
+h4 + img{   /* only h4 element with img */
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+}
+
+.things-to-be-learned {
+    list-style-type: none; /* remove bullet sign */
+    letter-spacing: 10px;
+}
+
+h2 ~ h3 { /* with h2 element and h3 only */
+    font-size: 18px;
+}
+
+#quote {
+    text-align: center;
+}
