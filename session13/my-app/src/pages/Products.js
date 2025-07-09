@@ -41,7 +41,7 @@ export default function Products() {
 
   return (
     <Container fluid className="min-vh-100 bg-body-secondary py-5 px-4">
-      <h1 className="text-center text-dark mb-5 fw-bold display-5">School Product Catalog</h1>
+      <h1 className="text-center text-dark mb-5 fw-bold display-5">S</h1>
 
       <Row xs={1} sm={2} md={2} lg={4} className="g-4">
         {products.map((product, idx) => (
