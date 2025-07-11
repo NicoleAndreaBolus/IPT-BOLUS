@@ -1,38 +1,34 @@
-import React from 'react'
-import { Container } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { Container, Form, Button } from "react-bootstrap"
 
 export default function Login() {
+  
+
+
+
   return (
-    <Container fluid className='p-5 d-flex my-5 shadow rounded w-50'>
-      <Container className='align-items-center text-center me-auto'>
-        <img src="https://web.ua.edu.ph/wp-content/uploads/2024/09/ua-logo.png" alt="UTask Logo" className='d-block mx-auto mb-4' style={{width: '150px'}} />
-        <h1 className='text-center mb-4'>Welcome to UTask</h1>
-        <h4 className='text-center mb-4'>Please login to continue.</h4>
-        <p className='text-center'>Don't have an account? <a href="/register">Register here</a></p>
-      </Container>
-      <Container>
-        <h1 className='text-center mb-4 fw-bold'>LOGIN</h1>
-        <h4 className='text-center mb-4'>Please enter your credentials.</h4>
+    <Container className="vh-100 d-flex align-items-center justify-content-center">
 
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email Address</Form.Label>
-            <Form.Control type="email" placeholder="Enter Your email" />
-          </Form.Group>
+        <Container className="p-1 p-lg-5 d-flex align-items-center justify-content-center flex-column border my-5 rounded-4">
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter Your Password" />
-          </Form.Group>
+        <h1 className="display-3 fw-bold text-primary">Sign In</h1>
 
-          <Button variant="primary" type="submit" className='justify-content-center d-block mx-auto w-50'>
-            Login
-          </Button>
+            <Form className="my-3 p-3 col-12 col-lg-4">
+
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Control type="email" placeholder="Email" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+
+
+            <Button className="w-100 p-2">Sign In</Button>
+
+
         </Form>
-      </Container>
-
+        </Container>
+        
     </Container>
   )
 }
