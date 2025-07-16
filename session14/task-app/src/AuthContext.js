@@ -1,4 +1,5 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, startTransition } from "react";
+
 
 const AuthContext = createContext();
 
@@ -15,12 +16,14 @@ const login = (userData) => {
 }
 
 const logout = () => {
-    setUser(null);
     localStorage.removeItem("loginData");
-}
+    startTransition(() => {
+        setUser(null);
+    });
+};
 
 return(
-    <AuthContext.Provider value={{user, login, logout}}>
+    <AuthContext.Provider value={{user, login, logout, setUser}}>
         {children}
     </AuthContext.Provider>
 )

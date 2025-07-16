@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tasks from './pages/Tasks';
 import { Container } from 'react-bootstrap';
+import Profile from './pages/Profile';
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path='/tasks' element={<Tasks />} />
             <Route path='*' element={<Error />} />
           </Routes>

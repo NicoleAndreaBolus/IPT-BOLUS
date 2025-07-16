@@ -36,7 +36,7 @@ export default function AppNavbar(){
 
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto gap-3">
 
                 {
                     !user ?
@@ -55,9 +55,9 @@ export default function AppNavbar(){
 
                 {
                     !user ? 
-                    <Button className='rounded-pill px-5' variant='outline-primary' as={NavLink} to="/login">Login</Button>
+                    <Button className='rounded-pill px-4' variant='outline-primary' as={NavLink} to="/login">Login</Button>
                     :
-                    <Button className='rounded-pill px-5' variant='outline-danger' onClick={logoutUser}>Logout</Button>
+                    <Button className='rounded-pill px-4' variant='outline-danger' onClick={logoutUser}>Logout</Button>
                 }
 
 
