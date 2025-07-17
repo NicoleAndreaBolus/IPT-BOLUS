@@ -60,6 +60,23 @@ export default function Register() {
     function register(e){
         e.preventDefault();
 
+        if(pass !== confirmPass){
+            Swal.fire({
+                title: "Mismatch",
+                text: "Passwords do not match.",
+                icon: "warning"
+            });
+            return;
+        }
+        if(pass.length < 8){
+            Swal.fire({
+                title: "Weak Password",
+                text: "Password must be at least 8 characters long.",
+                icon: "warning"
+            });
+            return;
+        }
+
         fetch("http://localhost:4000/users/register", {
             method: "POST",
             headers: {"Content-Type" : "application/json"},

@@ -215,7 +215,7 @@ export default function TaskLists() {
         <>
             <Container fluid className='d-flex justify-content-end align-items-center mb-4 px-4'>
                 <Button
-                    className='bg-gradient p-3 px-4 d-flex align-items-center rounded-pill fw-bold border-0 shadow-sm'
+                    className='bg-gradient p-3 px-4 d-flex align-items-center rounded-pill fw-bold border-0 shadow-md'
                     onClick={handleShow}
                     style={{ backgroundColor: "#ffc107", color: "#000" }}
                 >
@@ -233,7 +233,7 @@ export default function TaskLists() {
                 <Form className='p-1 p-lg-3' onSubmit={AddTask}>
                     <Modal.Body className='p-3'>
 
-                        {/* Task Name Input Field */}
+                        {/* Task Name Input Field */}14
                         <Form.Group className="mb-3">
                             <Form.Control
                                 type="text"

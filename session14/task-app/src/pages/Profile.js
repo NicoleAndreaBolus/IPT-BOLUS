@@ -1,5 +1,5 @@
 import { useAuth } from '../AuthContext';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -23,12 +23,32 @@ export default function ProfilePage() {
         css: ""
     });
 
+    const [editProfile, setEditProfile] = useState({
+        fname: "",
+        mname: "",
+        lname: "",
+        email: ""
+    });
+
     useEffect(() => {
         document.title = "UTask - Profile";
-        if (user) {
-            navigate("/profile");
+        if (!user) {
+            navigate("/login");
         }
     }, [user, navigate]);
+
+    useEffect(() => {
+        if (user) {
+            setEditProfile({
+                fname: user.fname,
+                mname: user.mname,
+                lname: user.lname,
+                email: user.email
+            });
+        }
+    }, [user]);
+
+
 
     useEffect(() => {
         const { newPass, confirm } = passwords;
@@ -44,13 +64,10 @@ export default function ProfilePage() {
         }
     }, [passwords.newPass, passwords.confirm]);
 
+    if(!user) return null; // Ensure user is defined before rendering
 
-    const [editProfile, setEditProfile] = useState({
-        fname: user.fname,
-        mname: user.mname,
-        lname: user.lname,
-        email: user.email
-    });
+
+
     // Edit Profile Function
     const handleUpdateProfile = () => {
         fetch(`http://localhost:4000/users/update/${user.user_id}`, {
