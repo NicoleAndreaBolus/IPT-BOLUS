@@ -1,5 +1,6 @@
+import { use } from 'react';
 import { useAuth } from '../AuthContext';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -31,14 +32,10 @@ export default function ProfilePage() {
     });
 
     useEffect(() => {
-        document.title = "UTask - Profile";
+        document.title = `${user.fname.toUpperCase()} ${user.lname.toUpperCase()} - Profile`
         if (!user) {
             navigate("/login");
-        }
-    }, [user, navigate]);
-
-    useEffect(() => {
-        if (user) {
+        } else {
             setEditProfile({
                 fname: user.fname,
                 mname: user.mname,
@@ -46,8 +43,7 @@ export default function ProfilePage() {
                 email: user.email
             });
         }
-    }, [user]);
-
+    }, [user, navigate]);
 
 
     useEffect(() => {
@@ -64,7 +60,7 @@ export default function ProfilePage() {
         }
     }, [passwords.newPass, passwords.confirm]);
 
-    if(!user) return null; // Ensure user is defined before rendering
+    if (!user) return null; // Ensure user is defined before rendering
 
 
 
